@@ -28,40 +28,45 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
-      <div className="card">
-        <div className="left">
-          <h1>Hello World.</h1>
-          <p>
-           welcome to our commuity ,
-           here you can get new friends, get up to date with your friends and much more,
-          </p>
-          <span>Don't you have an account?</span>
-          <Link to="/register">
-            <button>Register</button>
-          </Link>
-        </div>
-        <div className="right">
-          <h1>Login</h1>
-          <form>
-            <input
-              type="text"
-              placeholder="Username"
-              name="username"
-              onChange={handleChange}
-            />
-            <input
-              type="password"
-              placeholder="Password"
-              name="password"
-              onChange={handleChange}
-            />
-            {err && err}
-            <button onClick={handleLogin}>Login</button>
-          </form>
+    <div className="parent-login">
+      <h1>Golden Social</h1>
+      <div className="login">
+        <div className="card">
+            <form>
+              <input
+                type="text"
+                placeholder="Username"
+                name="username"
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                name="password"
+                onChange={handleChange}
+              />
+              {err && err}
+              <button type="submit" onClick={handleLogin}>Login</button>
+            </form>
+            <div class="line"></div>
+            <div>
+              <Link to="/register">
+                <button className="new-account-btn">register</button>
+              </Link>
+            </div>
         </div>
       </div>
+      <div class="languages">
+            <ul>
+              <li><a >Arabic</a></li>
+              <li><a >English (US)</a></li>
+              <li><a >Francais (France)</a></li>
+              <li><a >Deutsch</a></li>
+              <li><a >Espanol</a></li>
+            </ul>
+        </div>
     </div>
+   
   );
 };
 

@@ -82,3 +82,20 @@
     }
   }
 }
+
+.new-account-btn{
+  position: relative;
+  display: block;
+  text-align: center;
+  margin: auto;
+  width: 125px;
+  padding: 12px;
+  border-radius: 6px;
+  border: none;
+  background-image: linear-gradient(to top, #938eef 40%, #c6c2fc);
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}

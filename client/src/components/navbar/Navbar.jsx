@@ -20,7 +20,7 @@ const Navbar = () => {
     <div className="navbar">
       <div className="left">
        
-          <span>Gold Social</span>
+          <span><span className="g" style={{"color": "#938eef" , "fontSize" : "25px"}} >G</span>olden <span style={{"color": "#938eef" , "fontSize" : "25px"}}>S</span>ocial</span>
       
         <Link to="/" style={{ textDecoration: "none" }}>
         <HomeOutlinedIcon  />
@@ -41,15 +41,14 @@ const Navbar = () => {
       <Link to={'/profile/'+currentUser.id }>
       <PersonOutlinedIcon  />
       </Link>
-       
-        <EmailOutlinedIcon />
+       <Link to="/massnger" >
+        <EmailOutlinedIcon /></Link>
+        
         <NotificationsOutlinedIcon />
         <div className="user">
-          <img
-            src={ currentUser.profilePic}
-            alt=""
-          />
-          <span>{currentUser.name}</span>
+        <Link to="/login">
+                <button className="new-account-btn">Logout</button>
+              </Link>
         </div>
       </div>
     </div>

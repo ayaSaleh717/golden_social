@@ -1,0 +1,1333 @@
+
+:root{
+    --background-color: #f1f5f9;
+    --background-color-item: white;
+    --color-text-inside-button: white;
+    --color-text-inside-input: #777;
+    --color-switch: #ccc;
+    --color-text: black;
+    --color-sub-text: #777;
+    --shadow: #aaa;
+    --color-border-input: #ccc;
+    --padding: 80px;
+    --button-color-one: #8b09ab;
+    --button-color-two: #e30ca2;
+    --hover-one: #8b09abdc;
+    --hover-two: #e30ca2d0;
+    --icon-color: #8b09ab;
+    --hover-image: #ccc;
+    --color-body-message: rgb(156, 156, 156);
+}
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: var(--background-color);
+    height: 100vh;
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.15;
+    color: var(--color-text);
+    width: 100%;
+    transition: 1s;
+}
+.spin{
+    transform: rotate(360deg);
+    animation: b 2s linear infinite 0s;
+}
+@keyframes b{
+    from{
+    transform: rotate(360deg);
+    }
+    to{
+    transform: rotate(-360deg);
+    }
+}
+.container{
+    width: 100%;
+    height: 100%;
+    padding: 0px 10px;
+    position: fixed;
+    transition: 1s;
+}
+.container .logo{
+    width: max-content;
+    height: max-content;
+    padding: -12px;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--icon-color);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    /* box-shadow: 2px 2px 9px -2px var(--shadow); */
+    top: -50px;
+    z-index: 2222;
+    transition: 1s;
+}
+.container .logo img{
+    width: 60px;
+    border-radius: 50%;
+    height: 60px;
+    margin-right: 10px;
+}
+.logo .spaOne{
+    width: 13px;
+    height: 14px;
+    background-color: lightgreen;
+    z-index: 22;
+    display: none;
+    transform: translate(57px, -22px);
+    border-radius: 50%;
+}
+.logo .spaTwo{
+    width: 187px;
+    height: 24px;
+    border-radius: 0;
+    font-size: 17px;
+    border-radius: 10px;
+    word-spacing: 2px;
+    text-align: center;
+    padding: 2px;
+    background: linear-gradient(to right, var(--color-text) -74%, var(--button-color-two));
+    color: white;
+    transform: translateX(10px);
+}
+.container .header{
+    width: calc(100% - 20px);
+    height: 96px;
+    box-shadow: 0px 3px 3px -3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background-color: var(--background-color);
+    padding-top: 46px;
+    z-index: 222;
+    transition: 1s;
+}
+.container .header .left{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    gap: 32px;
+    margin-left: 40px;
+}
+.container .header .left i,
+.container .header .right i{
+    width: 38px;
+    background-color: var(--background-color-item);
+    color: var(--icon-color);
+    text-align: center;
+    padding: 7px;
+    font-size: 20px;
+    margin-left: 23px;
+    border-radius: 50%;
+}
+.container .header .right i{
+    float: right;
+    cursor: pointer;
+}
+.contain-list{
+    background-color: var(--background-color);
+    width: 43%;
+    height: 100%;
+    position: absolute;
+    left: -100%;
+    top: 0;
+    padding: 50px 10px;
+    transition: 1s;
+    box-shadow: 5px 2px 8px -1px var(--shadow);
+    z-index: 876543;
+}
+.contain-list .close i{
+    position: absolute;
+    right: 0;
+    color: var(--color-text);
+    top: 0;
+    font-size: xx-large;
+    cursor: pointer;
+}
+.contain-list .info{
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    align-items: center;
+}
+.contain-list .info .left{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+.contain-list .info .left h2{
+    text-transform: capitalize;
+    font-size: 21px;
+}
+.contain-list .info i{
+    color: var(--color-text);
+    box-shadow: 2px 1px 8px 0px;
+    padding: 8px;
+    font-size: 35px;
+    border-radius: 50%;
+}
+.contain-list .info .right i{
+    font-size: 25px;
+    box-shadow: none;
+    color: var(--icon-color);
+    cursor: pointer;
+}
+
+.contain-list .options .one{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    margin: 40px 0px;
+    padding: 20px;
+    border-radius: 8px;
+    transition: all 1.5s;
+    cursor: pointer;
+    font-size: 20px;
+    color: var(--color-text-inside-button);
+    background: linear-gradient(var(--button-color-one), var(--button-color-two));
+}
+
+.contain-list .options .one:hover{
+    box-shadow: 0px 1px 5px 0px var(--shadow);
+    background-image: linear-gradient(to top,var(--hover-one) 40%, var(--hover-two));
+}
+.setting{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    align-items: self-start;
+    top: 141px;
+    left: -100%;
+    width: 100%;
+    height: 78%;
+    z-index: 333;
+    background-color: var(--background-color);
+    box-shadow: 5px 2px 8px -1px var(--shadow);
+    transition: 1s;
+}
+.setting-options{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 80px;
+    width: 50%;
+    transform: translateX(28px);
+}
+.setting .one{
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    width: max-content;
+}
+.info .left img{
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.setting .personal-info{
+    margin: auto;
+    transform: translate(78px, -74px);
+    text-align: center;
+}
+.setting .personal-info label img{
+    width: 100%;
+    height: 100%;
+    /* position: relative; */
+    cursor: pointer;
+    transform: translateX(15px);
+    border-radius: 50%;
+}
+.personal-info label{
+    transform: translate(47px, 46px);
+    position: relative;
+    display: block;
+    width: 100px;
+    height: 100px;
+    z-index: -1;
+    background-color: var(--background-color);
+    border-radius: 50%;
+} 
+.setting .personal-info input{
+    display: none;
+}
+.setting .personal-info i{
+    width: 50px;
+    height: 50px;
+    font-size: 27px;
+    background-color: var(--color-text-inside-button);
+    border-radius: 50%;
+    text-align: center;
+    color: var(--icon-color);
+    padding: 10px;
+    transform: translate(44px, 5px);
+    cursor: pointer;
+}
+#Updateusername{
+    display: block;
+    border: 0;
+    background: none;
+    outline: none;
+    transform: translateX(-25px);
+    margin: 9px;
+    width: 160%;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 42px;
+}
+#Updateusername::placeholder{
+    color: var(--icon-color);
+    font-size: 30px;
+    font-weight: bold;
+    opacity: 1;
+}
+.setting .personal-info p{
+    cursor: pointer;
+    transform: translateX(3px);
+    color: var(--icon-color);
+}
+.setting .personal-info #updateNameButton{
+    display: none;
+}
+.setting .options{
+    transform: translate(79px,-141px);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+.setting .options .op{
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    border-radius: 25px 0px 0px 27px;
+    transition: all 2s;
+    cursor: pointer;
+    box-shadow: -13px 9px 14px -9px;
+}
+.setting .options .op:hover {
+    background: linear-gradient(33deg, var(--shadow), white);
+}
+.setting .options .option-1 h3,
+.setting .options .option-2 h3{
+    color: var(--color-text);
+}
+.setting .options .op img{
+    color: var(--background-color-item);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--background-color-item);
+    padding: 6px;
+}
+.filters{
+    transform: translate(90px, 234px);
+}
+.filters ul{
+    display: flex;
+    flex-direction: row;
+    gap: 55px;
+    width: 90%;
+    height: 50px;
+    position: sticky;
+    top: 0;
+    transform: translate(36px, -417px);
+}
+ul i{
+    transform: translateX(-48px);
+    font-size: 24px;
+    cursor: pointer;
+}
+.filters ul li{
+    list-style: none;
+    width: 140px;
+    box-shadow: 1px 3px 8px 0px;
+    background: linear-gradient(var(--button-color-one), var(--button-color-two));
+    padding: 7px;
+    text-align: center;
+    border-radius: 2px 36px 2px 23px;
+    cursor: pointer;
+}
+.filters ul .onetwo,
+.filters ul .twoone{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+/* .setting .options .op img:hover{
+    background-color: var(--hover-image);
+    transition: 0.3s;
+    box-shadow: 0px 0px 14px 7px var(--shadow);
+    scale: 0.5;
+} */
+/* .setting .option-2 div:nth-child(5){
+    transform: translateX(-194px);
+} */
+.body{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    width: 100%;
+    padding: 26px 20px;
+    top: 19%;
+    position: sticky;
+    height: calc(100% - 95px);
+    transition: 1s;
+}
+.body .left{
+    width: 64%;
+    height: 100%;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    bottom: 0;
+    position: absolute;
+    overflow: overlay;
+    padding: 20px;
+    scrollbar-width: none;
+}
+.body .left .search{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    transform: translateY(-29px);
+    position: sticky;
+    margin-top: 16px;
+}
+.body .left .search span{
+    background-color: var(--background-color-item);
+    width: 100%;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 27px;
+    color: var(--icon-color);
+    display: flex;
+    gap: 8px;
+}
+
+.body .left .search span input{
+    width: 88%;
+    border: 0;
+    background-color: var(--background-color);
+    border-radius: 5px;
+    box-shadow: 1px 1px 3px -1px inset;
+    outline: none;
+    color: var(--color-text);
+    padding: 5px;
+}
+::placeholder{
+    color: var(--icon-color);
+    opacity: .5;
+}
+.body .left .images-person-active .image-name .friends img{
+    width: 87px;
+    height: 74px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.body .left .images-person-active .one-frinds{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    margin-right: 50px;
+}
+.body .left .images-person-active .image-name .friends{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 10px;
+    transition: 1.5s;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.body .left .images-person-active .image-name{
+    width: 87%;
+}
+.image-name .friends span{
+    position: absolute;
+    transform: translate(96px, 45px);
+}
+.icon-archive{
+    font-size: 24px;
+    position: absolute;
+    right: 42px;
+    padding: 5px;
+    border-radius: 50%;
+    box-shadow: 2px 1px 5px 2px var(--button-color-two);
+    cursor: pointer;
+}
+.icon-archive:hover{
+    scale: 1.5;
+}
+.body .left .images-person-active .image-name .friends:hover{
+    border-bottom: 2px solid;
+    box-shadow: 1px 3px 5px 0px var(--shadow);
+}
+.body .left .images-person-active{
+    margin-top: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.body .right{
+    position: fixed;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-right: 10px;
+    left: 90%;
+}
+.body .right .social .media{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    position: sticky;
+}
+.body .right .social .media img{
+    width: 29px;
+    height: 72px;
+    position: sticky;
+    margin: 10px;
+    margin-right: 20px;
+    border-radius: 0px 135px 0px 126px;
+    box-shadow: -4px 10px 15px -4px;
+    cursor: pointer;
+}
+.body .right .social .media img:hover{
+    scale: 1.5;
+    transform: skewX(4deg);
+}
+.sendMessge{
+    position: absolute;
+    right: -40%;
+    top: 1px;
+    background-color: var(--background-color);
+    width: 40%;
+    height: 100%;
+    display: flex;
+    color: var(--color-text);
+    flex-direction: column;
+    justify-content: space-around;
+    z-index: 434343;
+    border-radius: 15px;
+    align-items: center;
+    box-shadow: 1px 0px 7px 3px var(--shadow);
+    transition: 1s;
+}
+.sendMessge .header2{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 14px 25px;
+    position: sticky;
+}
+.sendMessge .photoNameUser{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}    
+
+.sendMessge .header2 i{
+    color: var(--icon-color);
+}
+.sendMessge .header2 .left,
+.sendMessge .header2 .right{
+    display: flex;
+    align-items: center;
+    gap: 17px;
+}
+.sendMessge .header2 .left{
+    font-size: 20px;
+}
+.sendMessge .header2 .left img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.bodyMessage{
+    width: 100%;
+    height: 84%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    z-index: -23;
+    background-color: var(--color-body-message);
+}
+.bodysend{
+    width: 100%;
+    height: 77%;
+    left: 0;
+    position: absolute;
+    top: 77px;
+    overflow: auto;
+    scrollbar-width: none;
+}
+.bodyrecive{
+    width: 50%;
+    height: 66%;
+    right: 0;
+    position: absolute;
+    top: 150px;
+}
+.bodysend .left{
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+    align-items: center;
+}
+.bodysend .left .one{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: auto;
+    left: 0;
+    position: absolute;
+}
+.bodyrecive .right{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    right: 0;
+    position: absolute;
+}
+.bodysend .left span,
+.bodyrecive .right span{
+    display: flex;
+    width: max-content;
+    background: linear-gradient(var(--button-color-one), var(--button-color-two));
+    color: var(--color-text);
+    height: max-content;
+    padding: 10px;
+    border-radius: 0px 16px 0px 18px;
+}
+.bodysend .left img,
+.bodyrecive .right img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transform: translateY(22px);
+}
+.footer{
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    font-size: 17px;
+    display: flex;
+    color: var(--icon-color);
+    justify-content: space-between;
+    z-index: 3223;
+}
+.footer .left .fa-plus{
+    width: max-content;
+    height: max-content;
+    background-color: var(--icon-color);
+    color: var(--color-text);
+    text-align: center;
+    border-radius: 50%;
+}
+.footer .left input{
+    display: none;
+}
+.footer .left{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 31px;
+}
+.footer .right{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 21px;
+    padding: 7px;
+}
+.footer .right .span{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    background-color: var(--shadow);
+    border-radius: 20px;
+    padding: 6px;
+    transition: 1s;
+}
+.footer .right span input{
+    width: 100%;
+    height: 100%;
+    padding: 6px;
+    border: none;
+    background-color: var(--shadow);
+    outline: none;
+    color: var(--color-text);
+}
+.footer .right img{
+    width: 40px;
+    height: 40px;
+    transform: rotateZ(45deg);
+}
+
+.order-sending,
+.archive-message{
+    width: 97%;
+    height: 87%;
+    position: absolute;
+    left: 6%;
+    top: -98%;
+    padding-right: 20px;
+    transform: translate(-50px, -50px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: var(--background-color);
+    z-index: 22;
+    transition: 2s;
+}
+.archive-message{
+    z-index: 21;
+}
+.order-sending .header,
+.archive-message .header{
+    height: 71px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    font-size: 20px;
+    z-index: 2343;
+    background-color: var(--background-color);
+}
+.archive-message .header{
+    z-index: 234;
+}
+.order-sending .header h3,
+.archive-message .header h3{
+    position: absolute;
+    left: 45%;
+    color: var(--color-text);
+}
+.archive-body,
+.order-body{
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    transform: translateY(-139px);
+    direction: rtl;
+    height: 217px;
+}
+.order-sending .order-body p{
+    font-size: 20px;
+}
+.order-footer,
+.archive-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 63px;
+    left: 0px;
+    display: flex;
+    gap: 10px;
+    padding: 19px;
+    font-size: 20px;
+    color: var(--hover-two);
+}
+.order-sending .header,
+.order-sending .order-footer{
+    box-shadow: 3px 3px 8px 1px var(--shadow);
+    border-radius: 0px 0px 60px 60px;
+}
+.archive-message .header,
+.archive-message .archive-footer{
+    box-shadow: 3px 3px 8px 1px var(--shadow);
+    border-radius: 0px 0px 60px 60px;
+}
+.order-sending .order-footer h4,
+.archive-message .archive-footer h4{
+    cursor: pointer;
+}
+.order-sending .order-body .order-recived .one-order img,
+.archive-message .archive-body .archive-recived .one-archive img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+.order-recived,
+.archive-recived{    
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 44px;
+    position: absolute;
+    z-index: -22222;
+    right: -11px;
+    height: 417px;
+    scrollbar-width: none;
+    position: fixed;
+    overflow-y: scroll;
+}
+.one-order,
+.one-archive{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    transition: 1s;
+    border-radius: 20px;
+    height: 70px;
+    width: 270px;
+    cursor: pointer;
+}
+.user-message,
+.user-message-archive{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 14px;
+}
+.one-order:hover,
+.one-archive:hover{
+    background: linear-gradient(to right , var(--background-color-item) 50%, var(--button-color-two));
+    width: 800px;
+}
+@media (min-width: 901px) and (max-width: 1024px){
+    .media{
+    transform: translate(173px, 453px);
+    gap: 40px;
+    }
+    .body .right{
+        left: 73%;
+    }
+    .image-name{
+        font-size: 20px;
+    }
+    .contain-list{
+        width: 70%;
+    }
+    .sendMessge{
+        width: 70%;
+        right: -70%;
+    }
+    .sendMessge .footer .right .span{
+        width: 310px;
+    }
+    .setting .one i,
+    .setting .one h2{
+        font-size: 47px;
+    }
+    .setting{
+        height: 87%;
+        display: flex;
+        gap: 242px;
+    }
+    .contain-list .info .left h2 {
+        text-transform: capitalize;
+        font-size: 37px;
+    }
+    .info .left img {
+        width: 100px;
+        height: 100px;
+    }
+    .contain-list .info .right i {
+        font-size: 51px;
+    }
+    .contain-list .options .one {
+        margin: 60px 0px;
+        padding: 45px;
+        font-size: 43px;
+    }
+    .contain-list .close{
+        font-size: 55px;
+    }
+    .setting .personal-info{
+        margin: auto;
+        transform: translate(15px, -195px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .setting .personal-info label img{
+        width: 100%;
+        height: 100%;
+        /* position: relative; */
+        cursor: pointer;
+        transform: translateX(15px);
+        border-radius: 50%;
+    }
+    .setting-options{
+        transform: translateX(151px);
+    }
+    .personal-info label{
+        transform: translate(-12px, 46px);
+        position: relative;
+        display: block;
+        width: 154px;
+        height: 154px;
+        z-index: -1;
+        background-color: var(--background-color);
+        border-radius: 50%;
+    } 
+    .setting .personal-info input{
+        display: none;
+    }
+    .setting .personal-info i{
+        width: 70px;
+        height: 70px;
+        font-size: 42px;
+        background-color: var(--color-text-inside-button);
+        border-radius: 50%;
+        text-align: center;
+        color: var(--icon-color);
+        padding: 15px;
+        transform: translate(45px, -15px);
+        cursor: pointer;
+    }
+    .setting .personal-info h1{    
+    transform: translateX(-4px);
+    font-size: 48px;
+    }
+    .setting .personal-info p{
+        transform: translateX(-7px);
+        color: var(--icon-color);
+        font-size: 31px;
+    }
+    .setting .options{
+        transform: translate(46px, -247px);
+        display: flex;
+        justify-content: center;
+        gap: 74px;
+}
+    .setting .options .op{
+        display: flex;
+        align-items: center;
+        gap: 92px;
+        padding: 14px;
+        border-radius: 25px 0px 0px 27px;
+        font-size: 28px;
+        transition: all 2s;
+        cursor: pointer;
+        box-shadow: -13px 9px 14px -9px;
+    }
+    .setting #Updateusername{
+        transform: translateX(12px);
+    }
+    .setting .personal-info p{
+        transform: translateX(9px);
+    }
+    .setting .filters{
+        transform: translate(50px, 143px);
+        font-size: 23px;
+    }
+    .setting .filters ul .onetwo,
+    .setting .filters ul .twoone{
+        gap: 47px;
+    }
+    .setting .filters ul li{
+        list-style: none;
+        width: 184px;
+        box-shadow: 1px 3px 8px 0px;
+        background: linear-gradient(var(--button-color-one), var(--button-color-two));
+        padding: 12px;
+        text-align: center;
+        border-radius: 2px 36px 2px 23px;
+        cursor: pointer;
+    }
+}
+@media (min-width: 500px) and (max-width: 900px){
+    .contain-list{
+        width: 100%;
+    }
+    .setting .one i,
+    .setting .one h2{
+        font-size: 47px;
+    }
+    .setting{
+        height: 87%;
+        display: flex;
+        gap: 98px;
+    }
+    .contain-list .info .left h2 {
+        text-transform: capitalize;
+        font-size: 37px;
+    }
+    .info .left img {
+        width: 100px;
+        height: 100px;
+    }
+    .contain-list .info .right i {
+        font-size: 51px;
+    }
+    .contain-list .options .one {
+        margin: 60px 0px;
+        padding: 27px;
+        font-size: 27px;
+    }
+    .contain-list .close{
+        font-size: 55px;
+    }
+    .setting .personal-info{
+        margin: auto;
+        transform: translate(-20px, -195px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        justify-content: center;
+        align-items: center;
+    }
+    .setting .personal-info label img{
+        width: 100%;
+        height: 100%;
+        /* position: relative; */
+        cursor: pointer;
+        transform: translateX(15px);
+        border-radius: 50%;
+    }
+    .setting-options{
+        transform: translateX(151px);
+        gap: 48px;
+    }
+    .personal-info label{
+        transform: translate(-12px, 46px);
+        position: relative;
+        display: block;
+        width: 144px;
+        height: 144px;
+        z-index: -1;
+        background-color: var(--background-color);
+        border-radius: 50%;
+    } 
+    .setting .personal-info input{
+        display: none;
+    }
+    .setting .personal-info i{
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        background-color: var(--color-text-inside-button);
+        border-radius: 50%;
+        text-align: center;
+        color: var(--icon-color);
+        padding: 12px;
+        transform: translate(45px, -15px);
+        cursor: pointer;
+    }
+    .setting .personal-info h1{    
+    transform: translateX(-4px);
+    font-size: 38px;
+    }
+    .setting .personal-info p{
+        transform: translateX(-7px);
+        color: var(--icon-color);
+        font-size: 31px;
+    }
+    .setting .options{
+        transform: translate(-9px, -247px);
+        display: flex;
+        justify-content: center;
+        gap: 64px;
+}
+    .setting .options .op{
+        display: flex;
+        align-items: center;
+        gap: 64px;
+        padding: 6px;
+        border-radius: 25px 0px 0px 27px;
+        font-size: 20px;
+        transition: all 2s;
+        cursor: pointer;
+        box-shadow: -13px 9px 14px -9px;
+    }
+    .setting #Updateusername{
+        transform: translateX(12px);
+    }
+    .setting .personal-info p{
+        transform: translateX(9px);
+    }
+    .setting .filters{
+        transform: translate(-12px, 143px);
+        font-size: 18px;
+    }
+    .setting .filters ul{
+        gap: 58px;
+    }
+    .setting .filters ul li{
+        list-style: none;
+        width: 154px;
+        box-shadow: 1px 3px 8px 0px;
+        background: linear-gradient(var(--button-color-one), var(--button-color-two));
+        padding: 12px;
+        text-align: center;
+        border-radius: 2px 36px 2px 23px;
+        cursor: pointer;
+    }
+    
+    .body .left .images-person-active .image-name {
+        font-size: 21px;
+        width: 80%;
+    }
+    .body .left .images-person-active .image-name img {
+        width: 107px;
+        height: 107px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    body .left .search span {
+        font-size: 38px;
+    }    
+    body .left .search span input {
+        font-size: 24px;
+    }
+    .sendMessge{
+        width: 100%;
+        right: -100%;
+    }
+    .body .right .social .media{
+        transform: translateX(123px);
+    }
+    .sendMessge .footer .left {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 42px;
+    }
+    .sendMessge .footer .right .span{
+        width: 280px;
+        padding: 9px;
+    }
+    .archive-message{
+        top: -80%;
+        height: 80%;
+    }
+    .sendMessge .footer .right img {
+        width: 57px;
+        height: 57px;
+    }
+    .body .left{
+        width: 85%;
+        left: -3%;
+    }
+    .body .right{
+        transform: translate(-17px, 216px);
+        left: 68%;
+    }
+}
+@media (min-width: 250px) and (max-width: 499px){
+    .contain-list{
+        width: 100%;
+    }
+    .setting .one i,
+    .setting .one h2{
+        font-size: 37px;
+    }
+    .setting{
+        height: 87%;
+        display: flex;
+        gap: 138px;
+    }
+    .contain-list .info .left h2 {
+        text-transform: capitalize;
+        font-size: 27px;
+    }
+    .info .left img {
+        width: 100px;
+        height: 100px;
+    }
+    .contain-list .info .right i {
+        font-size: 41px;
+    }
+    .contain-list .options .one {
+        margin: 60px 0px;
+        padding: 40px;
+        font-size: 30px;
+    }
+    .contain-list .close{
+        font-size: 55px;
+    }
+    .setting .personal-info{
+        margin: auto;
+        transform: translate(15px, -195px);
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    .setting .personal-info label img{
+        width: 100%;
+        height: 100%;
+        /* position: relative; */
+        cursor: pointer;
+        transform: translateX(15px);
+        border-radius: 50%;
+    }
+    .setting-options{
+        transform: translateX(75px);
+    }
+    .personal-info label{
+        transform: translate(-12px, 46px);
+        position: relative;
+        display: block;
+        width: 154px;
+        height: 154px;
+        z-index: -1;
+        background-color: var(--background-color);
+        border-radius: 50%;
+    } 
+    .setting .personal-info input{
+        display: none;
+    }
+    .setting .personal-info i{
+        width: 58px;
+        height: 58px;
+        font-size: 32px;
+        background-color: var(--color-text-inside-button);
+        border-radius: 50%;
+        text-align: center;
+        color: var(--icon-color);
+        padding: 12px;
+        transform: translate(45px, -15px);
+        cursor: pointer;
+    }
+    .setting .personal-info h1{    
+    transform: translateX(-4px);
+    font-size: 38px;
+    }
+    .setting .personal-info p{
+        transform: translateX(-7px);
+        color: var(--icon-color);
+        font-size: 31px;
+    }
+    .setting .options{
+        transform: translate(38px, -247px);
+        display: flex;
+        justify-content: center;
+        gap: 40px;
+}
+    .setting .options .op{
+        display: flex;
+        align-items: center;
+        gap: 34px;
+        padding: 14px;
+        border-radius: 25px 0px 0px 27px;
+        font-size: 17px;
+        transition: all 2s;
+        cursor: pointer;
+        box-shadow: -13px 9px 14px -9px;
+    }
+    .setting #Updateusername{
+        transform: translateX(44px);
+    }
+    .setting .personal-info p{
+        transform: translateX(9px);
+    }
+    .setting .filters{
+        transform: translate(50px, 143px);
+        font-size: 23px;
+    }
+    .setting .filters ul{
+        gap: 78px;
+    }
+    .setting .filters ul li{
+        list-style: none;
+        width: 140px;
+        box-shadow: 1px 3px 8px 0px;
+        background: linear-gradient(var(--button-color-one), var(--button-color-two));
+        padding: 12px;
+        text-align: center;
+        border-radius: 2px 36px 2px 23px;
+        cursor: pointer;
+    }
+    .filters ul i{
+        transform: translate(-99px, -30px);
+    }
+    
+    .body .left .images-person-active .image-name {
+        font-size: 18px;
+        width: 80%;
+    }
+    .body .left{
+        width: 97%;
+        position: absolute;
+        left: -6%;
+    }
+    .body .left .images-person-active .image-name img {
+        width: 107px;
+        height: 107px;
+        border-radius: 50%;
+        cursor: pointer;
+    } 
+    .body .right{
+        left: 80%;
+    }
+    body .left .search span {
+        font-size: 38px;
+    }    
+    body .left .search span input {
+        font-size: 24px;
+    }
+    .sendMessge{
+        width: 100%;
+        right: -100%;
+    }
+    .body .right .social .media{
+        transform: translate(26px, 315px);
+}
+    .sendMessge .footer .left {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        font-size: 23px;
+    }
+    .sendMessge .footer .right .span{
+        width: 180px;
+        padding: 10px;
+    }
+    .archive-message{
+        top: -80%;
+        height: 80%;
+    }
+    .sendMessge .footer .right img {
+        width: 35px;
+        height: 35px;
+    }
+    .spaTwo{
+        width: 106px;
+    }
+    .order-sending .header{
+        font-size: 20px;
+    }
+    .order-sending,
+    .archive-message{
+        width: 110%;
+    }
+}
+    
+    
